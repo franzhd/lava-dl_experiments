@@ -38,7 +38,7 @@ class WISDM_Dataset_parser():
             np.random.shuffle(ids)
             ids = ids[:subset]
             return np.array(self.train_dataset[0][ids]), np.array(self.train_dataset[1][ids])
-        return np.array(self.train_dataset)
+        return self.train_dataset
 
     def get_validation_set(self, subset=None):
         if subset:
@@ -47,7 +47,7 @@ class WISDM_Dataset_parser():
             np.random.shuffle(ids)
             ids = ids[:subset]
             return np.array(self.val_dataset[0][ids]), np.array(self.val_dataset[1][ids])
-        return np.array(self.val_dataset)
+        return self.val_dataset
 
     def get_test_set(self, subset=None):
         if subset:
@@ -56,7 +56,7 @@ class WISDM_Dataset_parser():
             np.random.shuffle(ids)
             ids = ids[:subset]
             return np.array(self.test_dataset[0][ids]), np.array(self.test_dataset[1][ids])
-        return np.array(self.test_dataset)
+        return self.test_dataset
     
     def de_std(self, data):
         data= data * self.std
